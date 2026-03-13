@@ -3,9 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musica</title>
+    <title>Música</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilo del header */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 5rem 1rem 4rem 1rem;
+            background-color: #0a0a0a;
+            border-bottom: 1px solid #282828;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 3rem;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin: 0;
+            background: linear-gradient(45deg, #1db954, #1ed760, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 20px rgba(29, 185, 84, 0.2);
+        }
+
+        header p {
+            color: #b3b3b3;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Contenedor de la cuadrícula de botones */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            width: 90%;
+            max-width: 1000px;
+            padding-bottom: 4rem;
+        }
+
+        /* Estilo de los botones/tarjetas */
+        .card-btn {
+            background-color: #282828;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid transparent;
+        }
+
+        .card-btn:hover {
+            transform: translateY(-8px);
+            background-color: #333333;
+            border-color: #1db954;
+            box-shadow: 0 10px 20px rgba(29, 185, 84, 0.1);
+        }
+
+        .card-btn h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-btn p {
+            color: #b3b3b3;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Historia de la musica</h1>
+
+    <header>
+        <h1>Música</h1>
+        <p>Selecciona una sección para comenzar a explorar</p>
+    </header>
+
+    <main class="grid-container">
+        <a href="historia.html" class="card-btn">
+            <h2>📜 Historia</h2>
+            <p>Descubre los orígenes, épocas y la evolución a través del tiempo.</p>
+        </a>
+
+        <a href="generos.html" class="card-btn">
+            <h2>🎸 Géneros</h2>
+            <p>Explora los diferentes estilos, ritmos y características sonoras.</p>
+        </a>
+
+        <a href="agrupaciones.html" class="card-btn">
+            <h2>🎤 Agrupaciones</h2>
+            <p>Conoce sobre bandas legendarias, ensambles y proyectos en vivo.</p>
+        </a>
+
+        <a href="teoria.html" class="card-btn">
+            <h2>🎼 Teoría</h2>
+            <p>Aprende las bases fundamentales de la lectura y composición.</p>
+        </a>
+
+        <a href="instrumentos.html" class="card-btn">
+            <h2>🥁 Instrumentos</h2>
+            <p>Descubre la anatomía, clasificación y el papel que juega cada elemento en una mezcla.</p>
+        </a>
+
+        <a href="eventos.html" class="card-btn">
+            <h2>🎪 Eventos y Festivales</h2>
+            <p>Sigue la pista de conciertos, presentaciones en vivo y la vibrante escena de los carnavales.</p>
+        </a>
+    </main>
+
 </body>
 </html>
