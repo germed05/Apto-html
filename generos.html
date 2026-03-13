@@ -13,9 +13,7 @@
             --sub-text: #b0b0b0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
@@ -26,12 +24,10 @@
             line-height: 1.7;
         }
 
-        /* --- BARRA DE NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN --- */
         .top-bar {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; width: 100%;
             background-color: rgba(5, 5, 5, 0.98);
             backdrop-filter: blur(10px);
             display: flex;
@@ -48,7 +44,6 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
@@ -56,16 +51,19 @@
             list-style: none;
             display: flex;
             gap: 1.2rem;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
+
+        .nav-links::-webkit-scrollbar { display: none; }
 
         .nav-links a {
             color: var(--sub-text);
             text-decoration: none;
             font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 1px;
             text-transform: uppercase;
             transition: color 0.3s;
         }
@@ -74,7 +72,7 @@
 
         /* --- HERO INTRO --- */
         .hero-intro {
-            height: 50vh;
+            height: 45vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -88,51 +86,24 @@
             margin-top: 60px;
         }
 
-        .hero-intro h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 4rem;
-            color: var(--accent);
-            margin: 0;
-            text-transform: uppercase;
-        }
+        .hero-intro h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; color: var(--accent); margin: 0; text-transform: uppercase; }
+        .hero-intro h3 { font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--accent); margin: 0.5rem 0 0 0; text-transform: uppercase; }
+        .hero-intro p { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--sub-text); max-width: 600px; margin-top: 0.5rem; }
 
-        .hero-intro h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            color: var(--accent);
-            margin: 0.5rem 0 0 0; 
-            text-transform: uppercase;
-        }
-
-        .hero-intro p {
-            font-family: 'Lora', serif;
-            font-size: 1.1rem;
-            color: var(--sub-text);
-            max-width: 600px;
-            margin-top: 0.5rem;
-        }
-
-        /* --- CONTAINER PRINCIPAL --- */
-        main {
-            width: 75%; 
-            margin: 0 auto;
-            transition: width 0.3s ease;
-        }
+        /* --- CONTAINER AL 75% --- */
+        main { width: 75%; margin: 0 auto; }
 
         .section-wrapper {
             position: relative;
-            min-height: 60vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
-            padding: 4rem 0;
+            padding: 2.5rem 0;
             gap: 50px;
-            scroll-margin-top: 120px;
+            scroll-margin-top: 100px;
         }
 
-        .section-wrapper:first-of-type {
-            padding-top: 2rem;
-        }
-
+        .section-wrapper:first-of-type { padding-top: 0; }
         .section-wrapper:nth-child(even) { flex-direction: row-reverse; }
 
         /* --- EFECTOS DE TEXTO --- */
@@ -144,34 +115,9 @@
             border-left: 2px solid transparent;
         }
 
-        .content-container:hover {
-            transform: translateX(15px);
-            border-left: 2px solid var(--accent);
-        }
-
-        h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3.5rem;
-            margin: 0;
-            line-height: 0.9;
-            color: var(--accent);
-            text-transform: uppercase;
-            transition: text-shadow 0.4s;
-        }
-
-        .content-container:hover h2 {
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .description {
-            font-family: 'Lora', serif;
-            font-size: 1.05rem;
-            margin-top: 1.2rem;
-            color: var(--sub-text);
-            text-align: justify;
-            transition: color 0.4s;
-        }
-
+        .content-container:hover { transform: translateX(15px); border-left: 2px solid var(--accent); }
+        h2 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; margin: 0; line-height: 0.9; color: var(--accent); text-transform: uppercase; }
+        .description { font-family: 'Lora', serif; font-size: 1.05rem; margin-top: 1.2rem; color: var(--sub-text); text-align: justify; }
         .content-container:hover .description { color: #ffffff; }
 
         /* --- IMÁGENES --- */
@@ -181,20 +127,15 @@
             overflow: hidden;
             clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            transition: all 0.5s ease;
         }
 
         .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(60%);
-            transition: 0.8s ease;
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(60%); transition: 0.8s ease;
         }
 
-        .section-wrapper:hover .image-container img {
-            filter: grayscale(0%);
-            transform: scale(1.08);
-        }
+        .section-wrapper:hover .image-container img { filter: grayscale(0%); transform: scale(1.08); }
 
         /* --- FOOTER --- */
         footer {
@@ -206,78 +147,50 @@
             border-top: 1px solid #1a1a1a;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-            color: #777;
-        }
-
-        .firma { 
-            color: var(--accent); 
-            font-weight: bold; 
-            text-transform: uppercase; 
-        }
+        footer p { margin: 0; font-size: 0.75rem; color: #777; }
+        .firma { color: var(--accent); font-weight: bold; text-transform: uppercase; }
 
         /* =========================================
-           BREAKPOINTS RESPONSIVE (LA MAGIA AQUÍ)
+           RESPONSIVE REVISADO
            ========================================= */
-
-        /* Tablets y Laptops Pequeñas */
         @media (max-width: 1100px) {
             main { width: 85%; }
-            .nav-links { gap: 0.8rem; }
             h2 { font-size: 2.8rem; }
         }
 
-        /* Dispositivos Móviles (Smartphones) */
         @media (max-width: 768px) {
-            .top-bar { padding: 1rem; }
-            
-            /* Hacemos scroll horizontal en la nav para que no desaparezcan los géneros */
-            .nav-links {
-                overflow-x: auto;
-                white-space: nowrap;
-                padding-bottom: 5px;
-                gap: 1rem;
-                width: 70%;
-                justify-content: flex-start;
-                scrollbar-width: none; /* Oculta scroll en Firefox */
+            .hero-intro { 
+                height: auto; 
+                padding: 4rem 10% 2rem 10%; /* Más padding abajo para separar del main */
+                margin-bottom: 2rem; /* ESPACIO DE SEGURIDAD */
             }
-            .nav-links::-webkit-scrollbar { display: none; } /* Oculta scroll en Chrome */
 
-            .hero-intro { height: 40vh; padding: 0 10%; }
             .hero-intro h1 { font-size: 2.5rem; }
-            .hero-intro h3 { font-size: 1.2rem; }
-            .hero-intro p { font-size: 0.9rem; }
+            .hero-intro h3 { font-size: 1.5rem; }
 
-            main { width: 92%; } /* Más espacio para el contenido en móvil */
+            .nav-links { width: 70%; gap: 1rem; padding: 0.5rem 0; }
 
-            .section-wrapper {
-                flex-direction: column !important; /* Apilamos texto arriba e imagen abajo */
+            main { width: 90%; }
+
+            .section-wrapper { 
+                flex-direction: column !important; 
                 text-align: center;
-                gap: 30px;
-                padding: 3rem 0;
-                min-height: auto;
+                padding: 3rem 0; /* Devolvemos espacio entre secciones en móvil */
             }
 
-            .content-container {
-                padding-left: 0;
-                border-left: none;
-                flex: none;
-            }
+            /* Aseguramos que el primero tenga aire arriba */
+            .section-wrapper:first-of-type { padding-top: 1rem; }
 
-            .content-container:hover { transform: translateY(-5px); } /* Hover hacia arriba en móvil */
-
-            h2 { font-size: 2.2rem; }
-            .description { font-size: 0.95rem; text-align: center; }
+            .content-container { padding-left: 0; border-left: none; }
+            .content-container:hover { transform: translateY(-10px); }
 
             .image-container {
                 width: 100%;
-                height: 250px;
-                flex: none;
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Quitamos el clip diagonal en móvil para que luzca mejor la foto */
+                height: 30vh;
+                clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
             }
+            
+            .description { text-align: center; }
         }
     </style>
 </head>
@@ -337,7 +250,7 @@
         <section class="section-wrapper" id="jazz">
             <div class="content-container">
                 <h2>Jazz &<br>Swing</h2>
-                <p class="description">El arte de la improvisación. Surgido en Nueva Orleans, se distingue por sus síncopas y notas azules. Es una forma de entender la música donde el intérprete tiene la libertad de crear en tiempo real con dominio técnico absoluto.</p>
+                <p class="description">El arte de la improvisación. Surgido en Nueva Orleans, se distingue por sus síncopas y notas azules. Es una forma de entender la música donde el intérprete tiene la libertad de crear en tiempo real.</p>
             </div>
             <div class="image-container">
                 <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800" alt="Jazz">
@@ -347,7 +260,7 @@
         <section class="section-wrapper" id="pop">
             <div class="content-container">
                 <h2>Cultura<br>Pop</h2>
-                <p class="description">Accesibilidad y melodía. Refleja el espíritu de la época a través de iconos globales y producciones impecables que convierten la música en un lenguaje universal e instantáneo que conecta a millones.</p>
+                <p class="description">Accesibilidad y melodía. Refleja el espíritu de la época a través de iconos globales y producciones impecables que convierten la música en un lenguaje universal e instantáneo.</p>
             </div>
             <div class="image-container">
                 <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=800" alt="Pop">
@@ -357,7 +270,7 @@
         <section class="section-wrapper" id="blues">
             <div class="content-container">
                 <h2>The<br>Blues</h2>
-                <p class="description">La raíz de todo. Utiliza la estructura de 12 compases para canalizar el dolor y la esperanza. Es la expresión cruda del espíritu humano que sentó las bases para el rock, el jazz y el soul moderno.</p>
+                <p class="description">La raíz de todo. Utiliza la estructura de 12 compases para canalizar el dolor y la esperanza. Es la expresión cruda del espíritu humano que sentó las bases para el rock y el jazz moderno.</p>
             </div>
             <div class="image-container">
                 <img src="https://www.condeduquemadrid.es/sites/default/files/styles/activities_outstanding_image/public/import/activities/2015/10/The-Blues.jpg.webp?itok=EO27-_ba" alt="Blues">
@@ -377,7 +290,7 @@
         <section class="section-wrapper" id="hiphop">
             <div class="content-container">
                 <h2>Hip<br>Hop</h2>
-                <p class="description">Movimiento cultural que incluye rap y sampling. Basado en rimas poéticas que abordan la denuncia social y la introspección, es hoy el motor principal de la industria musical y la narrativa urbana.</p>
+                <p class="description">Movimiento cultural que incluye rap y sampling. Basado en rimas poéticas que abordan la denuncia social y la introspección personal, es hoy el motor principal de la industria musical.</p>
             </div>
             <div class="image-container">
                 <img src="https://images.unsplash.com/photo-1546707012-c46675f12716?q=80&w=800" alt="HipHop">
